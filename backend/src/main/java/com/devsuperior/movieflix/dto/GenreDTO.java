@@ -1,37 +1,32 @@
-package com.devsuperior.movieflix.entities;
+package com.devsuperior.movieflix.dto;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import com.devsuperior.movieflix.entities.Genre;
 
-@Entity
-@Table(name = "tb_genre")
-public class Genre implements Serializable {
+public class GenreDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	private Long id;
 	private String name;
+	private List<MovieDTOGetGenre> movies = new ArrayList<>();
 
-	@OneToMany(mappedBy = "genre", fetch = FetchType.EAGER)
-	private List<Movie> movies = new ArrayList<>();
-	
-	public Genre() {
+	public GenreDTO() {
 	}
 
-	public Genre(Long id, String name) {
+	public GenreDTO(Long id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
+	}
+
+	public GenreDTO(Genre entity) {
+		super();
+		this.id = entity.getId();
+		this.name = entity.getName();
+		entity.getMovies().forEach(mov -> this.movies.add(new MovieDTOGetGenre(mov)));
 	}
 
 	public Long getId() {
@@ -49,8 +44,8 @@ public class Genre implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	public List<Movie> getMovies() {
+
+	public List<MovieDTOGetGenre> getMovies() {
 		return movies;
 	}
 
@@ -70,7 +65,7 @@ public class Genre implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Genre other = (Genre) obj;
+		GenreDTO other = (GenreDTO) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;

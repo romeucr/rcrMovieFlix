@@ -1,48 +1,24 @@
-package com.devsuperior.movieflix.entities;
+package com.devsuperior.movieflix.dto;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import com.devsuperior.movieflix.entities.Movie;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-@Entity
-@Table(name = "tb_movie")
-public class Movie implements Serializable {
+public class MovieDTOGetGenre implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String title;
 	private String subTitle;
 	private Integer year;
 	private String imgUri;
-	
-	@Column(columnDefinition = "TEXT") // used for long text fields. Default maps to varchar. This way will map to text in DB
 	private String synopsis;
 	
-	@JsonIgnore
-	@ManyToOne
-	@JoinColumn(name = "genre_id")
-	private Genre genre; 
-	
-	/*
-	 * @OneToMany(mappedBy = "movie") private List<Review> reviews = new
-	 * ArrayList<>();
-	 */
-	
-	public Movie() {
+	public MovieDTOGetGenre() {
 	}
 
-	public Movie(Long id, String title, String subTitle, Integer year, String imgUri, String synopsis, Genre genre) {
+	public MovieDTOGetGenre(Long id, String title, String subTitle, Integer year, String imgUri,
+			String synopsis) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -50,9 +26,18 @@ public class Movie implements Serializable {
 		this.year = year;
 		this.imgUri = imgUri;
 		this.synopsis = synopsis;
-		this.genre = genre;
 	}
-
+	
+	public MovieDTOGetGenre(Movie entity) {
+		super();
+		this.id = entity.getId();
+		this.title = entity.getTitle();
+		this.subTitle = entity.getSubTitle();
+		this.year = entity.getYear();
+		this.imgUri = entity.getImgUri();
+		this.synopsis = entity.getSynopsis();
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -100,18 +85,6 @@ public class Movie implements Serializable {
 	public void setSynopsis(String synopsis) {
 		this.synopsis = synopsis;
 	}
-	
-	public Genre getGenre() {
-		return genre;
-	}
-
-	public void setGenre(Genre genre) {
-		this.genre = genre;
-	}
-
-	/*
-	 * public List<Review> getReviews() { return reviews; }
-	 */
 
 	@Override
 	public int hashCode() {
@@ -129,7 +102,7 @@ public class Movie implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Movie other = (Movie) obj;
+		MovieDTOGetGenre other = (MovieDTOGetGenre) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
