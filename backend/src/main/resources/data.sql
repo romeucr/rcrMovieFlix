@@ -2,11 +2,12 @@ INSERT INTO tb_role (authority) VALUES ('ROLE_VISITOR');
 INSERT INTO tb_role (authority) VALUES ('ROLE_MEMBER');
 
 INSERT INTO tb_user (name, email, password) VALUES ('Ana Green', 'ana@gmail.com', '$2a$10$eACCYoNOHEqXve8aIWT8Nu3PkMXWBaOxJ9aORUYzfMQCbVBIhZ8tG');
-INSERT INTO tb_user (name, email, password) VALUES ('Bob Borwn', 'bob@gmail.com', '$2a$10$eACCYoNOHEqXve8aIWT8Nu3PkMXWBaOxJ9aORUYzfMQCbVBIhZ8tG');
+INSERT INTO tb_user (name, email, password) VALUES ('Bob Brown', 'bob@gmail.com', '$2a$10$eACCYoNOHEqXve8aIWT8Nu3PkMXWBaOxJ9aORUYzfMQCbVBIhZ8tG');
+INSERT INTO tb_user (name, email, password) VALUES ('Cat Yellow', 'cat@gmail.com', '$2a$10$eACCYoNOHEqXve8aIWT8Nu3PkMXWBaOxJ9aORUYzfMQCbVBIhZ8tG');
 
-INSERT INTO tb_user_role (user_id, role_id) VALUES (1, 1);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (1, 2);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (2, 1);
+INSERT INTO tb_user_role (user_id, role_id) VALUES (3, 2);
 
 INSERT INTO tb_genre (name) VALUES ('Terror');
 INSERT INTO tb_genre (name) VALUES ('Action');
@@ -28,3 +29,24 @@ INSERT INTO tb_movie (title, sub_title, year, img_uri, synopsis, genre_id) VALUE
 INSERT INTO tb_movie (title, sub_title, year, img_uri, synopsis, genre_id) VALUES ('Zodiac', 'There''s more than one way to lose your life to a killer.', 2007, 'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jP2htGBHE7vKq4MLeC75UeC0sZH.jpg', 'The true story of the investigation of the "Zodiac Killer", a serial killer who terrified the San Francisco Bay Area, taunting police with his ciphers and letters. The case becomes an obsession for three men as their lives and careers are built and destroyed by the endless trail of clues.', 6);
 INSERT INTO tb_movie (title, sub_title, year, img_uri, synopsis, genre_id) VALUES ('House at the End of the Street', 'Fear reaches out... for the girl next door.', 2012, 'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/gPE36ptyUFP4IqgRDaj2mdcfju2.jpg', 'A mother and daughter move to a new town and find themselves living next door to a house where a young girl murdered her parents. When the daughter befriends the surviving son, she learns the story is far from over.', 6);
 
+INSERT INTO tb_review (user_id, movie_id, text) VALUES (1, 1, 'For me the scariest look Regan makes while possessed is right after Fr. Merrin is killed and Fr. Damien is trying to revive him. Regan just sits on the bed watching with a blank, almost stupefied look on her face, like even she is surprised that Merrin is dead. That creeps me out for some reason.');
+INSERT INTO tb_review (user_id, movie_id, text) VALUES (1, 2, 'I was NOT expecting to be hit right in the feels man! My 15 year old daughter cried and...yes, I shed a quick tear..guess it hit home, being bullied through a good chunk of my younger life, focusing on studies & (I''d like to think) successful and now a father myself, Stan''s speech at the end of the movie...ugh!Make fun all you want. I can take it!');
+INSERT INTO tb_review (user_id, movie_id, text) VALUES (1, 3, 'The fighter jet that Maverick and co.figtht has no country of origins the president of the u.s. which was Reagan was not called up..');
+INSERT INTO tb_review (user_id, movie_id, text) VALUES (1, 4, 'The 2nd half of the movie is great but the beginning with Rambo bonding with the Taliban is a slog.');
+INSERT INTO tb_review (user_id, movie_id, text) VALUES (1, 5, 'Not a funny movie.');
+INSERT INTO tb_review (user_id, movie_id, text) VALUES (1, 6, 'That is really funny! I love Adam Sandler <3');
+INSERT INTO tb_review (user_id, movie_id, text) VALUES (1, 7, 'It is kinda like Silent Hill... Radha Mitchell is also in this one...');
+INSERT INTO tb_review (user_id, movie_id, text) VALUES (1, 8, 'I have nothing against Howard, but there''s something about some of his movie titles that makes me want to laugh. "Hillbilly Elegy"... LOL... that sounds about as funny as "Cinderella Man" to me, ha ha.');
+INSERT INTO tb_review (user_id, movie_id, text) VALUES (1, 9, 'The best SW movie so far.');
+INSERT INTO tb_review (user_id, movie_id, text) VALUES (1, 10, 'My favorite!');
+INSERT INTO tb_review (user_id, movie_id, text) VALUES (1, 11, 'Still need to watch this one');
+INSERT INTO tb_review (user_id, movie_id, text) VALUES (1, 12, 'It is a waste of time. It is soooooo boring :(');
+
+INSERT INTO tb_review (user_id, movie_id, text) VALUES (3, 1, 'Not a funny movie.');
+INSERT INTO tb_review (user_id, movie_id, text) VALUES (3, 10, 'That is really funny! I love Adam Sandler <3');
+INSERT INTO tb_review (user_id, movie_id, text) VALUES (3, 2, 'It is kinda like Silent Hill... Radha Mitchell is also in this one...');
+INSERT INTO tb_review (user_id, movie_id, text) VALUES (3, 5, 'I have nothing against Howard, but there''s something about some of his movie titles that makes me want to laugh. "Hillbilly Elegy"... LOL... that sounds about as funny as "Cinderella Man" to me, ha ha.');
+INSERT INTO tb_review (user_id, movie_id, text) VALUES (3, 12, 'The best movie so far.');
+INSERT INTO tb_review (user_id, movie_id, text) VALUES (3, 7, 'My favorite!');
+INSERT INTO tb_review (user_id, movie_id, text) VALUES (3, 6, 'Still need to watch this one');
+INSERT INTO tb_review (user_id, movie_id, text) VALUES (3, 3, 'It is a waste of time. It is soooooo boring :(');
