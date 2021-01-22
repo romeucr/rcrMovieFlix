@@ -16,6 +16,7 @@ import com.devsuperior.movieflix.entities.Genre;
 import com.devsuperior.movieflix.entities.Movie;
 import com.devsuperior.movieflix.repositories.GenreRepository;
 import com.devsuperior.movieflix.repositories.MovieRepository;
+import com.devsuperior.movieflix.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class MovieService {
@@ -37,12 +38,8 @@ public class MovieService {
 	@Transactional(readOnly = true)
 	public MovieDTOMovieById findById(Long id) {
 		Optional<Movie> obj = movieRepository.findById(id); // findById returns an Optional.
-		/*
-		 * Movie entity = obj.orElseThrow(() -> new
-		 * ResourceNotFoundException("Entity not Found")); // to get as Product the //
-		 * Optional object
-		 */
-		Movie entity = obj.get();
+
+		Movie entity = obj.orElseThrow(() -> new ResourceNotFoundException("Entity not Found")); // to get as
 
 		return new MovieDTOMovieById(entity, entity.getReviews());
 	}
