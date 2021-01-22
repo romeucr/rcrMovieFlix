@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.devsuperior.movieflix.dto.MovieDTO;
+import com.devsuperior.movieflix.dto.MovieDTOMovieById;
 import com.devsuperior.movieflix.entities.Genre;
 import com.devsuperior.movieflix.entities.Movie;
 import com.devsuperior.movieflix.repositories.GenreRepository;
@@ -30,11 +31,11 @@ public class MovieService {
 
 		Page<Movie> list = movieRepository.findAll(genres, pageRequest);
 
-		return list.map(mov -> new MovieDTO(mov)); // to transform a List<Product> to List<ProductDTO>
+		return list.map(mov -> new MovieDTO(mov)); // to transform a List<Movie> to List<MovieDTO>
 	}
 
 	@Transactional(readOnly = true)
-	public MovieDTO findById(Long id) {
+	public MovieDTOMovieById findById(Long id) {
 		Optional<Movie> obj = movieRepository.findById(id); // findById returns an Optional.
 		/*
 		 * Movie entity = obj.orElseThrow(() -> new
@@ -43,6 +44,6 @@ public class MovieService {
 		 */
 		Movie entity = obj.get();
 
-		return new MovieDTO(entity, entity.getReviews());
+		return new MovieDTOMovieById(entity, entity.getReviews());
 	}
 }

@@ -34,14 +34,13 @@ INSERT INTO tb_review (user_id, movie_id, text) VALUES (1, 2, 'I was NOT expecti
 INSERT INTO tb_review (user_id, movie_id, text) VALUES (1, 3, 'The fighter jet that Maverick and co.figtht has no country of origins the president of the u.s. which was Reagan was not called up..');
 INSERT INTO tb_review (user_id, movie_id, text) VALUES (1, 4, 'The 2nd half of the movie is great but the beginning with Rambo bonding with the Taliban is a slog.');
 INSERT INTO tb_review (user_id, movie_id, text) VALUES (1, 5, 'Not a funny movie.');
-INSERT INTO tb_review (user_id, movie_id, text) VALUES (1, 6, 'That is really funny! I love Adam Sandler <3');
+INSERT INTO tb_review (user_id, movie_id, text) VALUES (1, 6, 'This movie is really funny! I love Adam Sandler <3');
 INSERT INTO tb_review (user_id, movie_id, text) VALUES (1, 7, 'It is kinda like Silent Hill... Radha Mitchell is also in this one...');
 INSERT INTO tb_review (user_id, movie_id, text) VALUES (1, 8, 'I have nothing against Howard, but there''s something about some of his movie titles that makes me want to laugh. "Hillbilly Elegy"... LOL... that sounds about as funny as "Cinderella Man" to me, ha ha.');
 INSERT INTO tb_review (user_id, movie_id, text) VALUES (1, 9, 'The best SW movie so far.');
 INSERT INTO tb_review (user_id, movie_id, text) VALUES (1, 10, 'My favorite!');
-INSERT INTO tb_review (user_id, movie_id, text) VALUES (1, 11, 'Still need to watch this one');
+INSERT INTO tb_review (user_id, movie_id, text) VALUES (1, 11, 'I will see this movie tomorrow on TV!');
 INSERT INTO tb_review (user_id, movie_id, text) VALUES (1, 12, 'It is a waste of time. It is soooooo boring :(');
-
 INSERT INTO tb_review (user_id, movie_id, text) VALUES (3, 1, 'Not a funny movie.');
 INSERT INTO tb_review (user_id, movie_id, text) VALUES (3, 10, 'That is really funny! I love Adam Sandler <3');
 INSERT INTO tb_review (user_id, movie_id, text) VALUES (3, 2, 'It is kinda like Silent Hill... Radha Mitchell is also in this one...');

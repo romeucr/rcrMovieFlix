@@ -4,6 +4,10 @@ import java.io.Serializable;
 
 import com.devsuperior.movieflix.entities.User;
 
+/*
+ * NO MOMENTO ESTÁ SENDO USADO SOMENTE PELO ReviewDTOMovieById 
+ * 
+ * */
 public class UserDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	

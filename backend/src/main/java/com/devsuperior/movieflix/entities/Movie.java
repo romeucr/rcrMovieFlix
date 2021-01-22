@@ -14,8 +14,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 @Entity
 @Table(name = "tb_movie")
 public class Movie implements Serializable {
@@ -32,7 +30,6 @@ public class Movie implements Serializable {
 	@Column(columnDefinition = "TEXT") // used for long text fields. Default maps to varchar. This way will map to text in DB
 	private String synopsis;
 
-	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "genre_id")
 	private Genre genre;
