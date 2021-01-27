@@ -22,7 +22,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
-import com.devsuperior.movieflix.dto.MovieDTOGetGenre;
+import com.devsuperior.movieflix.dto.MovieDTO;
 import com.devsuperior.movieflix.dto.ReviewDTO;
 import com.devsuperior.movieflix.repositories.MovieRepository;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -187,10 +187,10 @@ public class MovieResourceIT {
 		Assertions.assertTrue(allMoviesGenresMatch(getMovies(result), genreId));
 	}
 	
-	private MovieDTOGetGenre[] getMovies(ResultActions result) throws Exception {
+	private MovieDTO[] getMovies(ResultActions result) throws Exception {
 		String json = result.andReturn().getResponse().getContentAsString();
 		JsonNode node = objectMapper.readValue(json, ObjectNode.class).get("content");
-		return objectMapper.convertValue(node, MovieDTOGetGenre[].class);
+		return objectMapper.convertValue(node, MovieDTO[].class);
 	}
 	
 	private ReviewDTO[] getReviews(ResultActions result) throws Exception {
@@ -199,7 +199,7 @@ public class MovieResourceIT {
 		return objectMapper.convertValue(node, ReviewDTO[].class);
 	}
 	
-	private boolean orderedByTitle(MovieDTOGetGenre[] movies) {
+	private boolean orderedByTitle(MovieDTO[] movies) {
 		for (int i = 1; i < movies.length; i++) {
 			if (movies[i-1].getTitle().compareTo(movies[i].getTitle()) > 0) {
 				return false;
@@ -208,8 +208,8 @@ public class MovieResourceIT {
 		return true;
 	}
 	
-	private boolean allMoviesGenresMatch(MovieDTOGetGenre[] movies, long genreId) {
-		for (MovieDTOGetGenre movie : movies) {
+	private boolean allMoviesGenresMatch(MovieDTO[] movies, long genreId) {
+		for (MovieDTO movie : movies) {
 			if (movie.getGenreId() != genreId) { // MovieDTO -> Long genreId
 				return false;
 			}
