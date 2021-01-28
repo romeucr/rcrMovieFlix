@@ -29,7 +29,7 @@ public class UserService implements UserDetailsService, Serializable {
 			logger.error("User not found: " + username);
 			throw new UsernameNotFoundException("User not found");
 		}
-		logger.info("User found: " + username);
+		logger.info("User logged: " + username);
 		return user;
 	}
 

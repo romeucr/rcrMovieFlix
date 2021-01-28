@@ -1,7 +1,5 @@
 package com.devsuperior.movieflix.services;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,9 +26,9 @@ public class MovieService {
 	private GenreRepository genreRepository;
 
 	public Page<MovieDTO> findAllPaged(Long genreId, PageRequest pageRequest) {
-		List<Genre> genres = (genreId == 0) ? null : Arrays.asList(genreRepository.getOne(genreId));
+		Genre genre = (genreId == 0) ? null : genreRepository.getOne(genreId);
 
-		Page<Movie> list = movieRepository.findAll(genres, pageRequest);
+		Page<Movie> list = movieRepository.findAll(genre, pageRequest);
 
 		return list.map(mov -> new MovieDTO(mov)); // to transform a List<Movie> to List<MovieDTO>
 	}

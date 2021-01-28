@@ -16,7 +16,7 @@ public class MovieDTOMovieById implements Serializable {
 	private Integer year;
 	private String imgUri;
 	private String synopsis;
-	private List<ReviewDTOMovieById> reviews = new ArrayList<>();
+	private List<ReviewDTO> reviews = new ArrayList<>();
 
 	public MovieDTOMovieById() {
 	}
@@ -43,7 +43,7 @@ public class MovieDTOMovieById implements Serializable {
 
 	public MovieDTOMovieById(Movie entity, List<Review> list) {
 		this(entity);
-		list.forEach(rev -> this.reviews.add(new ReviewDTOMovieById(rev)));
+		list.forEach(rev -> this.reviews.add(new ReviewDTO(rev)));
 	}
 
 	public Long getId() {
@@ -94,7 +94,7 @@ public class MovieDTOMovieById implements Serializable {
 		this.synopsis = synopsis;
 	}
 
-	public List<ReviewDTOMovieById> getReviews() {
+	public List<ReviewDTO> getReviews() {
 		return reviews;
 	}
 }

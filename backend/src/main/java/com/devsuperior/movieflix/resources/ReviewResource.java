@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.devsuperior.movieflix.dto.ReviewInsertDTO;
+import com.devsuperior.movieflix.dto.ReviewDTO;
 import com.devsuperior.movieflix.services.ReviewService;
 
 @RestController
@@ -23,7 +23,7 @@ public class ReviewResource {
 	private ReviewService service;
 
 	@PostMapping
-	public ResponseEntity<ReviewInsertDTO> insert(@Valid @RequestBody ReviewInsertDTO dto) {
+	public ResponseEntity<ReviewDTO> insert(@Valid @RequestBody ReviewDTO dto) {
 		dto = service.insert(dto);
 
 		// to create the URI of the new object created. The location of the new object

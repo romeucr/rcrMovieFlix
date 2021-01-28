@@ -2,37 +2,33 @@ package com.devsuperior.movieflix.dto;
 
 import java.io.Serializable;
 
-import javax.validation.constraints.NotBlank;
-
 import com.devsuperior.movieflix.entities.Review;
 
-public class ReviewInsertDTO implements Serializable {
+public class ReviewDTO2 implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Long id;
-	
-	@NotBlank(message = "Text can not be blank neither null")
 	private String text;
 	private Long movieId;
-	private Long userId;
+	private UserDTO user;
 
-	public ReviewInsertDTO() {
+	public ReviewDTO2() {
 	}
-
-	public ReviewInsertDTO(Long id, String text, Long userId, Long movieId) {
+	
+	public ReviewDTO2(Long id, String text, Long movieId, UserDTO user) {
 		super();
 		this.id = id;
 		this.text = text;
 		this.movieId = movieId;
-		this.userId = userId;
+		this.user = user;
 	}
 	
-	public ReviewInsertDTO(Review entity) {
+	public ReviewDTO2(Review entity) {
 		super();
 		this.id = entity.getId();
 		this.text = entity.getText();
 		this.movieId = entity.getMovie().getId();
-		this.userId = entity.getUser().getId(); //USER ID TEM QUE PEGAR O USUARIO LOGADO POR ENQUANTO ESTA PASSANDO NA REQUISICAO. VER O INSERT USER DO DSCATALOG
+		this.user = new UserDTO(entity.getUser());
 	}
 
 	public Long getId() {
@@ -50,7 +46,7 @@ public class ReviewInsertDTO implements Serializable {
 	public void setText(String text) {
 		this.text = text;
 	}
-
+	
 	public Long getMovieId() {
 		return movieId;
 	}
@@ -59,11 +55,11 @@ public class ReviewInsertDTO implements Serializable {
 		this.movieId = movieId;
 	}
 
-	public Long getUserId() {
-		return userId;
+	public UserDTO getUser() {
+		return user;
 	}
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
+	public void setUser(UserDTO user) {
+		this.user = user;
 	}
 }

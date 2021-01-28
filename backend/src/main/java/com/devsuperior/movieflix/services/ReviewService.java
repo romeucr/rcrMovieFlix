@@ -1,11 +1,13 @@
 package com.devsuperior.movieflix.services;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.devsuperior.movieflix.dto.ReviewInsertDTO;
+import com.devsuperior.movieflix.dto.ReviewDTO;
 import com.devsuperior.movieflix.entities.Review;
 import com.devsuperior.movieflix.entities.User;
 import com.devsuperior.movieflix.repositories.MovieRepository;
@@ -25,15 +27,15 @@ public class ReviewService {
 	private UserRepository userRepository;
 
 	@Transactional
-	public ReviewInsertDTO insert(ReviewInsertDTO dto) {
+	public ReviewDTO insert(@Valid ReviewDTO dto) {
 		Review entity = new Review();
 		entity.setText(dto.getText());
 		entity.setMovie(movieRepository.getOne(dto.getMovieId()));
 
 		User loggedUser = userRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication().getName());
 		entity.setUser(userRepository.getOne(loggedUser.getId()));
-
+		
 		entity = repository.save(entity);
-		return new ReviewInsertDTO(entity);
+		return new ReviewDTO(entity);
 	}
 }

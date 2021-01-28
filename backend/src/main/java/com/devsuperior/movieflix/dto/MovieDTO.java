@@ -1,11 +1,8 @@
 package com.devsuperior.movieflix.dto;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.devsuperior.movieflix.entities.Movie;
-import com.devsuperior.movieflix.entities.Review;
 
 public class MovieDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -16,12 +13,13 @@ public class MovieDTO implements Serializable {
 	private Integer year;
 	private String imgUri;
 	private String synopsis;
-	private List<ReviewDTO> reviews = new ArrayList<>();
+	private Long genreId;
+//	private List<ReviewDTO> reviews = new ArrayList<>();
 
 	public MovieDTO() {
 	}
 
-	public MovieDTO(Long id, String title, String subTitle, Integer year, String imgUri, String synopsis) {
+	public MovieDTO(Long id, String title, String subTitle, Integer year, String imgUri, String synopsis, Long genreId) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -29,6 +27,7 @@ public class MovieDTO implements Serializable {
 		this.year = year;
 		this.imgUri = imgUri;
 		this.synopsis = synopsis;
+		this.genreId = genreId;
 	}
 
 	public MovieDTO(Movie entity) {
@@ -39,12 +38,13 @@ public class MovieDTO implements Serializable {
 		this.year = entity.getYear();
 		this.imgUri = entity.getImgUri();
 		this.synopsis = entity.getSynopsis();
+		this.genreId = entity.getGenre().getId();
 	}
 
-	public MovieDTO(Movie entity, List<Review> list) {
-		this(entity);
-		list.forEach(rev -> this.reviews.add(new ReviewDTO(rev)));
-	}
+//	public MovieDTO(Movie entity, List<Review> list) {
+//		this(entity);
+//		list.forEach(rev -> this.reviews.add(new ReviewDTO(rev)));
+//	}
 
 	public Long getId() {
 		return id;
@@ -93,8 +93,16 @@ public class MovieDTO implements Serializable {
 	public void setSynopsis(String synopsis) {
 		this.synopsis = synopsis;
 	}
-
-	public List<ReviewDTO> getReviews() {
-		return reviews;
+	
+	public Long getGenreId() {
+		return genreId;
 	}
+
+	public void setGenreId(Long genreId) {
+		this.genreId = genreId;
+	}
+
+//	public List<ReviewDTO> getReviews() {
+//		return reviews;
+//	}
 }
