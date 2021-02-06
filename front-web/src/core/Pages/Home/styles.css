@@ -1,0 +1,44 @@
+.home-container {
+   display: flex;
+   background-color: #525252;
+   height: 100%px;
+   width: 100wh;
+}
+
+.home-info {
+   width: 50%;
+}
+
+.home-info-title {
+   font-family: Open Sans;
+   font-size: 50px;
+   line-height: 75px;
+   letter-spacing: -0.015em;
+   color: #FFFFFF;
+   margin-top: 50px;
+   margin-left: 144px;
+}
+
+.home-info-subtitle {
+   font-family: Open Sans;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 20px;
+   line-height: 33px;
+   letter-spacing: -0.015em;
+   color: #F2F2F2;
+   margin-top: 19px;
+   margin-left: 144px;
+}
+
+.home-info-image {
+   margin-top: 19px;
+   margin-left: 144px;
+}
+
+.home-login {
+   width: 50%;
+   display: flex;
+   justify-content: center;
+   margin-top: 55px;
+}

@@ -1,0 +1,10 @@
+.site-header {
+   height: 68px; 
+   background: #FFC700;
+   display: flex;
+   align-items: center;
+}
+
+.header-title {
+   margin-left: 50px;
+}

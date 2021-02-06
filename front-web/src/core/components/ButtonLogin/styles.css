@@ -1,0 +1,35 @@
+.btn {
+   margin: 100px 51px 0;
+   display: flex;
+   align-items: center;
+}
+
+.btn-login {
+   padding: 15px;
+   background: #FFC700;
+   border-radius: 10px 0 0 10px;
+   width: 310px;
+   border: 0;
+   height: 70px;
+}
+
+.btn-login-title {
+   font-family: Open Sans;
+   font-style: normal;
+   font-weight: bold;
+   font-size: 24px;
+   line-height: 33px;
+   text-align: center;
+   letter-spacing: -0.015em;
+   color: #000000;
+}
+
+.btn-arrow {
+   background: rgba(38, 50, 56, 0.5);
+   border-radius: 0px 10px 10px 0px;
+   height: 70px;
+   width: 73px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
