@@ -1,44 +1,100 @@
 .home-container {
    display: flex;
+   flex-direction: column;
+   align-items: center;
    background-color: #525252;
-   height: 100%px;
-   width: 100wh;
+   padding-bottom: 70px;
+   height: 100%;
 }
 
 .home-info {
-   width: 50%;
+   text-align: center;
 }
 
 .home-info-title {
-   font-family: Open Sans;
    font-size: 50px;
    line-height: 75px;
    letter-spacing: -0.015em;
    color: #FFFFFF;
    margin-top: 50px;
-   margin-left: 144px;
 }
 
 .home-info-subtitle {
-   font-family: Open Sans;
-   font-style: normal;
-   font-weight: normal;
    font-size: 20px;
    line-height: 33px;
    letter-spacing: -0.015em;
    color: #F2F2F2;
-   margin-top: 19px;
-   margin-left: 144px;
+   margin-bottom: 20px;
 }
 
-.home-info-image {
-   margin-top: 19px;
-   margin-left: 144px;
+/* Styling Home componenent after 950px*/
+@media(min-width: 950px) {
+   .home-container {
+      flex-direction: row;
+      justify-content: space-around;
+      height: 100vh;
+      align-items: unset;
+      padding-top: 50px;
+   }
+
+   .home-info,
+   .home-login {
+      width: 50%;
+   }
+
+   .home-info {
+      text-align: unset;
+      margin-left: 140px;
+   }
+
+   .home-info-title {
+      margin-top: 25px;
+   }
+
+   .home-info-subtitle {
+      margin-top: 20px; 
+   }
 }
 
-.home-login {
-   width: 50%;
-   display: flex;
-   justify-content: center;
-   margin-top: 55px;
+/* Styling LoginCard and ButtonLogin up to 700px */
+@media(max-width: 950px) {
+   /* LoginCard component */
+   .login-card {
+      width: 420px;
+      height: 400px;
+      margin-top: 50px;
+   }
+
+   .login-card-title {
+      margin-top: 25px;
+      text-align: center;
+      letter-spacing: -0.015em;
+      color: #FFFFFF;
+   }
+
+   .username-input {
+      margin-top: 50px;
+   }
+
+   /* ButtonLogin component */
+   .btn {
+      margin: 50px 0;
+      align-self: center;
+   }
+
+   .btn-login {
+      padding: 10px;
+      height: 50px;
+      width: 200px;
+   }
+
+   .btn-login-title {
+      font-weight: bold;
+      font-size: 20px;
+   }
+   
+   .btn-arrow {
+      height: 50px;
+      width: 50PX;
+   }
 }
