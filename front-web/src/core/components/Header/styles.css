@@ -1,3 +1,7 @@
+.link {
+   text-decoration: none;
+   color: inherit;
+}
 .site-header {
    height: 68px; 
    background: #FFC700;

@@ -4,6 +4,11 @@
    align-items: center;
 }
 
+.btn:hover,
+.btn-login:hover {
+   cursor: pointer;
+}
+
 .btn-login {
    padding: 15px;
    background: #FFC700;
