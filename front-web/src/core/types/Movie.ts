@@ -12,3 +12,8 @@ export type Movie = {
    synopsis: string,
    genreId: number
 }
+
+export type GenreResponse = {
+   id: number
+   name: string
+}

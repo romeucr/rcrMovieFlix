@@ -20,6 +20,7 @@
    align-items: center;
    justify-content: center;
    margin-right: 10px;
+   cursor: pointer;
 }
 
 .pagination-item.active {
@@ -29,9 +30,14 @@
 .pagination-previous {
    transform: rotate(-180deg);
    margin-right: 10px;
-   cursor: pointer;
 }
 
-.pagination-next {
+.pageActive {
    cursor: pointer;
+   color: #FFC700;
+}
+
+.pageInactive {
+   color: #6C6C6C;
+   pointer-events: none;
 }
