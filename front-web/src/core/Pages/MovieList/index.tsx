@@ -1,7 +1,26 @@
+import { useEffect, useState } from "react"
 import MovieCard from "../../components/MovieCard"
+import Pagination from "../../components/Pagination"
+import { MovieResponse } from "../../types/Movie"
+import { makePrivateRequest } from "../../utils/request"
 import "./styles.css"
 
 const MovieList = () => {
+
+   const [movieResponse, setMovieResponse] = useState<MovieResponse>()
+
+   console.log(movieResponse)
+
+   useEffect(() => {
+      const params = {
+         page: 0,
+         genreId: 0
+      }
+
+      makePrivateRequest({ url: '/movies', params})
+         .then(response => setMovieResponse(response.data))
+   }, [])
+
    return (
       <div className="movie-list-container">
          <div className="genre-bar">
@@ -12,17 +31,12 @@ const MovieList = () => {
             </select>
          </div>
          <div className="movies-list">
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
+            {movieResponse?.content.map(movie => (
+               <MovieCard key={movie.id} movie={movie}/>
+            ))}
          </div>
          <div className="pagination">
-
+            <Pagination totalPages={2}/>
          </div>
       </div>
    )

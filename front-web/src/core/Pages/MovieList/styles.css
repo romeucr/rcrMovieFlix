@@ -30,6 +30,7 @@
    letter-spacing: -0.015em;
    color: #FFFFFF;
    padding: 10px;
+   outline: none;
 }
 
 .movies-list {
