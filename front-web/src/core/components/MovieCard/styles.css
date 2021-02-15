@@ -1,0 +1,37 @@
+.movie-card {
+   width: 270px;
+   height: 320px;
+   background: #6C6C6C;
+   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+   border-radius: 10px;
+   margin-top: 40px;
+}
+
+.card-img {
+   width: 100%;
+   margin-top: 20px;
+}
+
+.card-info {
+   margin: 15px;
+}
+.title {
+   font-size: 20px;
+   line-height: 27px;
+   letter-spacing: -0.015em;
+   color: #FFFFFF;
+}
+
+.year {
+   font-size: 16px;
+   line-height: 22px;
+   letter-spacing: -0.015em;
+   color: #FFC700;
+}
+
+.synopsis {
+   font-size: 14px;
+   line-height: 19px;
+   letter-spacing: -0.015em;
+   color: #FFFFFF;
+}

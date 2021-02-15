@@ -16,6 +16,7 @@
    width: 310px;
    border: 0;
    height: 70px;
+   outline: none;
 }
 
 .btn-login-title {

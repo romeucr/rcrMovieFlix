@@ -6,7 +6,7 @@ import MovieList from './pages/MovieList'
 
 const Routes = () => (
    <BrowserRouter>
-      <Header />
+      <Header />  
       <Switch>
          <Route path="/" exact>
             <Home />
@@ -14,7 +14,7 @@ const Routes = () => (
          <Route path="/movies">
             <MovieList />
          </Route>
-         <Route path="/movie/:movieId">
+         <Route path="/movies/:movieId">
             <MovieDetail />
          </Route>
       </Switch>

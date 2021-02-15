@@ -1,12 +1,13 @@
-.link {
-   text-decoration: none;
-   color: inherit;
-}
 .site-header {
-   height: 68px; 
+   height: 65px; 
    background: #FFC700;
    display: flex;
    align-items: center;
+}
+
+.link {
+   text-decoration: none;
+   color: inherit;
 }
 
 .header-title {

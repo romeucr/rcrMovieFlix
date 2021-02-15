@@ -56,12 +56,12 @@
    }
 }
 
-/* Styling LoginCard and ButtonLogin up to 700px */
+/* Styling LoginCard and ButtonLogin before 950px */
 @media(max-width: 950px) {
    /* LoginCard component */
    .login-card {
       width: 420px;
-      height: 400px;
+      height: 450px;
       margin-top: 50px;
    }
 
@@ -73,7 +73,7 @@
    }
 
    .username-input {
-      margin-top: 50px;
+      margin-top: 30px;
    }
 
    /* ButtonLogin component */
