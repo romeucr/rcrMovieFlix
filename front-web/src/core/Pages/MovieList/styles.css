@@ -44,12 +44,12 @@
 
 @media(min-width: 700px) {
    .movies-list {
-      justify-content: space-around;
+      justify-content: space-evenly;
    }
 }
 
 @media(min-width: 950px) {
    .movies-list {
-      justify-content: space-between;
+      justify-content: space-evenly;
    }
 }
