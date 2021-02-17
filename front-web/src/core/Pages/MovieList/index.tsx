@@ -14,7 +14,7 @@ const MovieList = () => {
 
    const handleOnChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
       setGenreId(event.target.value)
-   } 
+   }
 
    useEffect(() => {
       const params = {

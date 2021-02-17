@@ -1,0 +1,21 @@
+.comment-author {
+   font-weight: bold;
+   font-size: 14px;
+   line-height: 22px;
+   letter-spacing: -0.015em;
+   color: #FFFFFF;
+   margin-left: 17px;
+}
+
+.comment-text {
+   font-size: 12px;
+   line-height: 22px;
+   text-align: justify;
+   letter-spacing: -0.015em;
+   color: #9E9E9E;
+   border: 1px solid #E1E1E1;
+   box-sizing: border-box;
+   border-radius: 20px;
+   padding: 10px 15px;
+   margin-bottom: 15px;
+}

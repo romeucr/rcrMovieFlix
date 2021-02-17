@@ -1,0 +1,89 @@
+.movie-detail-container {
+   width: 90%;
+   margin: 35px auto;
+   height: 100%;
+}
+
+.movie-detail-card {
+   background: #6C6C6C;
+   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+   border-radius: 10px;
+}
+
+.movie-img-container img {
+   width: 100%;
+   border-radius: 10px 10px 0 0;
+}
+
+.movie-info-container {
+   margin-top: 10px;
+   padding: 15px;
+}
+
+.movie-title {
+   color: #fff;
+   font-size: 26px;
+   line-height: 29px;
+   letter-spacing: -0.015em;
+   color: #FFFFFF;
+}
+
+.movie-year {
+   font-size: 20px;
+   line-height: 33px;
+   letter-spacing: -0.015em;
+   color: #FFC700;
+}
+
+.movie-subtitle {
+   font-size: 18px;
+   line-height: 25px;
+   letter-spacing: -0.015em;
+   color: #FFFFFF;
+}
+
+.movie-synopsis {
+   font-size: 16px;
+   line-height: 22px;
+   text-align: justify;
+   letter-spacing: -0.015em;
+   color: #9E9E9E;
+   border: 1px solid #E1E1E1;
+   box-sizing: border-box;
+   border-radius: 20px;
+   padding: 10px;
+   margin-top: 10px;
+}
+
+.comment-container {
+   background: #6C6C6C;
+   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+   border-radius: 10px;
+   padding: 15px;
+   margin-top: 15px;
+}
+
+.text-area {
+   background: #FFFFFF;
+   border: 1px solid #E1E1E1;
+   border-radius: 10px;
+   height: 75px;
+}
+
+.btn-save {
+   background: #FFC700;
+   border-radius: 10px;
+   padding: 10px 17px;
+   margin: 10px auto 0;
+   display: block;
+}
+
+.comments-container {
+   background: #6C6C6C;
+   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+   border-radius: 10px;
+   margin-top: 15px;
+   padding: 15px;
+}
+
+/* REVER NO TRAMO GRANDE O TAMANHO DAS FONTES E ESPACAMENTO*/
